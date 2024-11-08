@@ -1,0 +1,23 @@
+[
+    {
+      "playerId": 1,
+      "name": "Virat Kohli",
+      "country": "India",
+      "image": "virat_kohli_image_url",
+      "role": "Batsman",
+      "battingType": "Right-hand bat",
+      "bowlingType": "Right-arm medium",
+      "biddingPrice": 150
+    },
+    {
+      "playerId": 2,
+      "name": "Mitchell Starc",
+      "country": "Australia",
+      "image": "mitchell_starc_image_url",
+      "role": "Bowler",
+      "battingType": "Left-hand bat",
+      "bowlingType": "Left-arm fast",
+      "biddingPrice": 200
+    }
+  ]
+  
