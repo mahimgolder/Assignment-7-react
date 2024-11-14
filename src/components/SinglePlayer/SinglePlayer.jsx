@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
 import { IoFlagSharp } from "react-icons/io5";
-const SinglePlayer = ({player}) => {
-    const {playerId, name, country, image, role, battingType, bowlingType, biddingPrice} = player;
+const SinglePlayer = ({player, handleSelectedPlayerState}) => {
+    const { name, country, image, role, battingType, bowlingType, biddingPrice} = player;
     return (
         <>
         <div className="inline-block">
             <div className="border-2 p-6 rounded-xl">
-                <div>
-                    <img className="rounded-2xl w-[300px] h-[200px]" src={image} alt="" />
+                <div >
+                    <img className="mx-auto rounded-2xl h-[250px]" src={image} alt="" />
                 </div>
                 <div className="flex gap-3 items-center mt-6">
                     <img className="rounded-full w-10 h-10" src={image} alt="" />
@@ -23,7 +23,9 @@ const SinglePlayer = ({player}) => {
                 </div>
                 <div className="flex justify-between mt-3">
                     <p className="text-base font-semibold">Price: {biddingPrice}</p>
-                    <button className="rounded-lg border-[1px] border-[rgba(19, 19, 19, 0.1)] text-sm font-normal px-2 py-4">Choose Player</button>
+                    <button 
+                    onClick={() => handleSelectedPlayerState (player)} 
+                    className="rounded-lg border-[1px] border-[rgba(19, 19, 19, 0.1)] text-sm font-normal px-2 py-4">Choose Player</button>
                 </div>
             </div>
         </div>
@@ -31,7 +33,8 @@ const SinglePlayer = ({player}) => {
     );
 };
 SinglePlayer.propTypes ={
-    player: PropTypes.object.isRequired
+    player: PropTypes.object.isRequired,
+    handleSelectedPlayerState: PropTypes.func.isRequired
 }
 
 export default SinglePlayer;
