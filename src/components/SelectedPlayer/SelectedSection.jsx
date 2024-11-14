@@ -2,7 +2,6 @@ import { MdDeleteForever } from "react-icons/md";
 import PropTypes from "prop-types";
 
 const SelectedSection = ({selectedPlayer, handleDeletPlayer}) => {
-    console.log(selectedPlayer)
     return (
         <div>
             {
@@ -25,12 +24,15 @@ const SelectedSection = ({selectedPlayer, handleDeletPlayer}) => {
                     </div>
                 )
             }
+            { selectedPlayer.length > 0 && 
+                <button className="bg-yellow-400 py-[14px] px-[20px] ring-2 ring-offset-8 rounded-2xl hover:bg-yellow-600">Add More Player</button>
+            }
             
         </div>
     );
 };
 SelectedSection.propTypes ={
-    selectedPlayer: PropTypes.object.isRequired,
+    selectedPlayer: PropTypes.array.isRequired,
     handleDeletPlayer: PropTypes.func.isRequired
 
 }

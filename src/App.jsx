@@ -22,40 +22,44 @@ function App() {
 
   // banner section coin increase func
   const increaseCoinState = () =>{
-    if(increaseCoin === 0){
-      setIncreaseCoin(10000000)
-    }
-    else{
-      alert("Coins have already been added!")
-    }
+      setIncreaseCoin(increaseCoin + 6000000)
   }
 
   // player selected func
   const handleSelectedPlayerState = (player) => {
     const isSelected = selectedPlayer.find((p) => p.playerId === player.playerId);
-    console.log(isSelected)
     if(isSelected){
       console.log("nai")
       alert("Alredy Selected this player");
     }
     else{
+      console.log('not enough coin')
+      if(increaseCoin - player.biddingPrice < 0){
+        alert("Not enough coin")
+        return;
+      }
       const newselectedplayer = [...selectedPlayer, player]
       setSelectedPlayer(newselectedplayer);
+      const newDecreaseValue = increaseCoin - player.biddingPrice;
+      setIncreaseCoin(newDecreaseValue)
     }
-    const newDecreaseValue = increaseCoin - player.biddingPrice;
-    setIncreaseCoin(newDecreaseValue)
+
     
   }
+
+
   
   // delete Player in selected section func
   const handleDeletPlayer = (id) => {
     const newRemainingPlayer = selectedPlayer.filter((pla) => pla.playerId != id)
     setSelectedPlayer(newRemainingPlayer)
-
+    const deletPlayer = selectedPlayer.find((pla) => pla.playerId === id)
+    setIncreaseCoin(increaseCoin + deletPlayer.biddingPrice)
+    
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-6">
+    <div className="w-[1601px] mx-auto px-6">
       <Navbar
       increaseCoin = {increaseCoin}
       ></Navbar>

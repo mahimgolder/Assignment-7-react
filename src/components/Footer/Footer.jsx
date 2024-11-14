@@ -2,19 +2,22 @@
 const Footer = () => {
     return (
         <div>
-            <div className="  border-2 rounded-3xl">
-                <div className="border-2 rounded-3xl m-6 bg-[(/assets/bg-shadow.png)]">
-                    <div className="flex flex-col items-center my-[88px]">
-                        <h4 className="text-[32px] font-bold">Subscribe to our Newsletter</h4>
-                        <p className="font-medium text-xl">Get the latest updates and news right in your inbox!</p>
-                        <div className="flex gap-3 mt-6">
-                            <input className=" px-[30px] py-[18px] border-2 rounded-xl" type="email" placeholder="Enter your email" />
-                            <button className=" px-[30px] py-[18px] border-2 rounded-xl bg-yellow-200 text-black">Subscribe</button>
+            <div className="bg-[#06091A] mt-[378px]">
+            <div className=" relative -top-[154px] border-2 rounded-3xl mx-auto p-6 w-[1340px]">
+                <div className="border-2 rounded-3xl mr-0 bg-[url(/assets/bg-shadow.png)] bg-white bg-cover mx-auto">
+                    <div className="flex justify-center">
+                        <div className=" border-2 border-red-600 inline-flex flex-col items-center my-[88px] px-6">
+                            <h4 className="text-[32px] font-bold">Subscribe to our Newsletter</h4>
+                            <p className="font-medium text-xl">Get the latest updates and news right in your inbox!</p>
+                            <div className="flex gap-3 mt-6">
+                                <input className=" px-[30px] py-[18px] border-2 rounded-xl" type="email" placeholder="Enter your email" />
+                                <button className="bg-[url(/assets/bg-shadow.png)] bg-cover px-[30px] py-[18px] border-2 rounded-xl bg-yellow-200 text-black">Subscribe</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="bg-[#06091A]">
+            <div className="">
                 <div className="flex flex-col justify-center items-center gap-16">
                     <div>
                         <img  src="/assets/logo-footer.png" alt="" />
@@ -49,7 +52,7 @@ const Footer = () => {
                 <div className="py-8 text-center text-base font-normal text-[rgba(255, 255, 255, 0.6)">
                     <span className="">@2024 Your Company All Rights Reserved.</span>
                 </div>
-
+            </div>
             </div>
         </div>
     );
